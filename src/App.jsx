@@ -13,6 +13,7 @@ import react from "../public/react.png";
 import vs from "../public/vs.png";
 import git from "../public/git.png";
 import node from "../public/node.png";
+import Card from "./components/card/Card";
 function App() {
   return (
     <>
@@ -42,12 +43,12 @@ function App() {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="p" href="#">
+                  <a class="p" href="#about">
                     About
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class=" p" aria-disabled="true">
+                  <a class=" p" aria-disabled="true" href="#projects">
                     Projects
                   </a>
                 </li>
@@ -114,7 +115,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="about">
+        <div className="about" id="about">
           <p className="aboutPara">About Me</p>
           <div className="lineContainer2">
             <div className="line2"></div>
@@ -171,6 +172,16 @@ function App() {
               <p className="SkillPara">Git</p>
             </div>
           </div>
+        </div>
+
+        <div className="projects" id="projects">
+          <div className="projectTitle">
+            <p className="aboutPara">Projects</p>
+          </div>
+          <div className="lineContainer4">
+            <div className="line4"></div>
+          </div>
+          <Card />
         </div>
       </div>
     </>

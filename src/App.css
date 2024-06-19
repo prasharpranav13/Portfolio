@@ -11,7 +11,7 @@ a{
 }
 .bodyContainer{
   width: 100vw;
-  height: 100%;
+  /* height: 100%; */
  background: #131313;
 
 }
@@ -23,7 +23,8 @@ a{
   padding-bottom: 1rem;
   background: #131313;
   
- 
+ position: fixed;
+ z-index: 1000;
 }
 
 .title{
@@ -252,4 +253,18 @@ overflow: hidden;
 .SkillPara{
   text-align: center;
   color: #daf3ed;
+}
+.projectTitle{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.lineContainer4{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.line4{
+  width: 10%;
+  border-bottom: solid 2px #64ffda;
 }
