@@ -1,8 +1,22 @@
 import "./contact.css";
 import mail from "../../../public/mail.png";
 import user from "../../../public/user.png";
+import { useRef } from "react";
 const Contact = () => {
-  const handleSubmit = () => {};
+  const nameElement = useRef();
+  const emailElement = useRef();
+  const messageElement = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(
+      nameElement.current.value,
+      emailElement.current.value,
+      messageElement.current.value
+    );
+    nameElement.current.value = "";
+    emailElement.current.value = "";
+    messageElement.current.value = "";
+  };
   return (
     <div className="contactContainer" id="contactMe">
       <div className="contacts">
@@ -20,7 +34,7 @@ const Contact = () => {
         </div>
         <div className="contactRight">
           <div className="formContainer">
-            <form action="" onSubmit={handleSubmit}>
+            <form method="POST" action="" onSubmit={handleSubmit}>
               <div className="input input1">
                 {/* <label htmlFor="name" className="name">
                 Name
@@ -32,6 +46,7 @@ const Contact = () => {
                     name=""
                     id="name"
                     placeholder="Your name"
+                    ref={nameElement}
                   />
                 </div>
               </div>
@@ -41,7 +56,13 @@ const Contact = () => {
               </label> */}
                 <div className="emailDiv">
                   <img src={mail} alt="" className="mail" />
-                  <input type="text" name="" id="email" placeholder="email" />
+                  <input
+                    type="text"
+                    name=""
+                    id="email"
+                    placeholder="email"
+                    ref={emailElement}
+                  />
                 </div>
               </div>
               <div className="input input3">
@@ -52,6 +73,7 @@ const Contact = () => {
                   name="message"
                   id="message"
                   placeholder="Enter your message here..."
+                  ref={messageElement}
                 ></textarea>
               </div>
               <div className="btnContainer">

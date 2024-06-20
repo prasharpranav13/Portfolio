@@ -16,6 +16,7 @@ import node from "../public/node.png";
 import Card from "./components/card/Card";
 import OtherProj from "./components/otherProj/OtherProj";
 import Contact from "./components/contact/Contact";
+import resume from "../public/resume.pdf";
 function App() {
   return (
     <>
@@ -60,7 +61,12 @@ function App() {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="p resume" aria-disabled="true" href="#contactMe">
+                  <a
+                    class="p resume"
+                    aria-disabled="true"
+                    href={resume}
+                    download={resume}
+                  >
                     Resume
                   </a>
                 </li>
@@ -205,6 +211,9 @@ function App() {
             <div className="line6"></div>
           </div>
           <Contact />
+          <div className="footer">
+            <p>Made by @Pranav</p>
+          </div>
         </div>
       </div>
     </>
