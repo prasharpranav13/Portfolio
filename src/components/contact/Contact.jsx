@@ -2,21 +2,58 @@ import "./contact.css";
 import mail from "../../../public/mail.png";
 import user from "../../../public/user.png";
 import { useRef } from "react";
+import React, { useState } from "react";
+import axios from "axios";
+
+// const Form = () => {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     message: ''
+//   });
+
+//   const handleChange = (e) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value
+//     });
+//   };
+
 const Contact = () => {
   const nameElement = useRef();
   const emailElement = useRef();
   const messageElement = useRef();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      nameElement.current.value,
-      emailElement.current.value,
-      messageElement.current.value
-    );
-    nameElement.current.value = "";
-    emailElement.current.value = "";
-    messageElement.current.value = "";
+    try {
+      const response = await axios.post("http://localhost:3001/send-email", {
+        name: nameElement.current.value,
+        email: emailElement.current.value,
+        message: messageElement.current.value,
+      });
+      nameElement.current.value = "";
+      emailElement.current.value = "";
+      messageElement.current.value = "";
+      alert("Email sent successfully!");
+    } catch (error) {
+      nameElement.current.value = "";
+      emailElement.current.value = "";
+      messageElement.current.value = "";
+      console.error("Error sending email", error);
+      alert("Failed to send email");
+    }
   };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(
+  //     nameElement.current.value,
+  //     emailElement.current.value,
+  //     messageElement.current.value
+  //   );
+  //   nameElement.current.value = "";
+  //   emailElement.current.value = "";
+  //   messageElement.current.value = "";
+  // };
   return (
     <div className="contactContainer" id="contactMe">
       <div className="contacts">
