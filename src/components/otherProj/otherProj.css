@@ -1,0 +1,48 @@
+.otherProjs{
+display: flex; 
+flex-wrap: wrap;
+justify-content: center;
+width: 100%;
+gap: 2rem;
+}
+.otherProjContainer1,.otherProjContainer2,
+.otherProjContainer3,.otherProjContainer4,.otherProjContainer5{
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+ 
+}
+.top2{
+  height: 100%;
+}
+.top2 img{
+  padding: 0.2rem 0.1rem;
+
+  border: solid 1px white;
+  height: 12rem;
+  width: 21rem;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: 0.3s all;
+  
+}
+
+.top2 img:hover{
+  opacity: 1;
+  scale: 1.1;
+
+}
+
+.bottom2{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width:750px) {
+ .otherProjs{
+  gap: 0;
+ }
+
+}

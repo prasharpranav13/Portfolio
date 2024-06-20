@@ -14,6 +14,8 @@ import vs from "../public/vs.png";
 import git from "../public/git.png";
 import node from "../public/node.png";
 import Card from "./components/card/Card";
+import OtherProj from "./components/otherProj/OtherProj";
+import Contact from "./components/contact/Contact";
 function App() {
   return (
     <>
@@ -53,8 +55,13 @@ function App() {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="p" aria-disabled="true">
+                  <a class="p" aria-disabled="true" href="#contactMe">
                     Contact
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="p resume" aria-disabled="true" href="#contactMe">
+                    Resume
                   </a>
                 </li>
               </ul>
@@ -81,11 +88,11 @@ function App() {
             </div>
             <div className="desc">
               <p className="descPara">
-                I am Pranav Kumar Singh, a programmer, web developer, and
-                problem solver. When I'm not creating things that live on the
-                internet,you can find me reading or swaying to the rythm of pop
-                music. If you are someone who loves coding and geopolitics , we
-                can always have a talk over coffee.
+                a programmer, web developer, and problem solver. When I'm not
+                creating things that live on the internet,you can find me
+                reading or swaying to the rythm of pop music. If you are someone
+                who loves coding and geopolitics , we can always have a talk
+                over coffee.
               </p>
             </div>
             <div className="lineContainer">
@@ -182,6 +189,22 @@ function App() {
             <div className="line4"></div>
           </div>
           <Card />
+        </div>
+        <div className="other-projects" id="other-projects">
+          <div className="other-projectTitle">
+            <p className="aboutPara">Other Projects</p>
+          </div>
+          <div className="lineContainer5">
+            <div className="line5"></div>
+          </div>
+          <OtherProj />
+          <div className="contactPara">
+            <p>Contact Me</p>
+          </div>
+          <div className="lineContainer6">
+            <div className="line6"></div>
+          </div>
+          <Contact />
         </div>
       </div>
     </>
