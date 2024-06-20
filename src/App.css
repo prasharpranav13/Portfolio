@@ -27,6 +27,7 @@ a{
  z-index: 1000;
 }
 
+
 .title{
   color:#64ffda;
   font-family: "Caveat", cursive;
@@ -40,7 +41,15 @@ a{
   color: rgb(109, 108, 108);
   text-decoration: none;
   cursor: pointer;
+  padding-bottom: 0.2rem;
+ transition: all 0.5s;
+ 
   
+  
+}
+.p:hover{
+  color: #64ffda;
+  border-bottom: solid 2px #64ffda;
 }
 .textContainer{
   display: inline-block;
@@ -331,7 +340,10 @@ overflow: hidden;
   padding: 0.4rem;
   border-radius: 3px;
 }
+.resume:hover{
+  box-shadow: #64ffda 0px 3px 8px;
 
+}
 .footer{
   height: 2.5rem;
   width: 100%;
